@@ -18,6 +18,18 @@ h1{
 .box-left{
 	margin-left: 50px;
 }
+.whole{
+	background-color:powderblue;
+}
+
+.nav_item{
+	margin-left: 50px;
+	margin-top: 20px;
+   float: left;
+}
+
+html, body { background: #060410; }
+
 
 @import "bootstrap-sprockets";
 @import "bootstrap";
