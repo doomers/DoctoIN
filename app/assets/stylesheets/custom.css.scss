@@ -1,0 +1,23 @@
+$navbar-default-bg: #2b2929;
+
+
+h1{
+	line-height: 1;
+	color: red;
+}
+
+.footer{
+	color: white;
+
+}
+.box{
+	margin-right: 50px;
+	text-color: white;
+	text-alignment: right;
+}
+.box-left{
+	margin-left: 50px;
+}
+
+@import "bootstrap-sprockets";
+@import "bootstrap";
