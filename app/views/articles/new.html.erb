@@ -1,0 +1,22 @@
+
+<h1>Create a new Article</h1>
+<div class="alert">
+	<div class ="jumbotron box-left color-background">
+	  <%= form_for :article,url: articles_path do |f| %>
+	<p>
+	   <%= f.label :Topic %>
+	   <%= f.text_field :Topic %> 	
+	</p>
+	 
+	<p>
+	   <%= f.label :Description%>
+	   <%= f.text_field :Description%>
+	</p>
+
+	<p>
+       <%= f.submit %>
+	</p>
+	  
+	   <% end %>
+	 </div>
+</div>

@@ -1,1 +1,7 @@
-hospitals_controller.rb
+class HospitalsController < ApplicationController
+	def new
+	end
+
+	
+
+end

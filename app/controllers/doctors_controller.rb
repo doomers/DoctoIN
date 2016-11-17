@@ -23,4 +23,5 @@ class DoctorsController < ApplicationController
   	def chef_params
     params.require(:doctor).permit(:name, :email, :passwd, :years_of_exp)
   	end
+
 end

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   resources :doctors
   resources :hospitals
+  resources :posts
+  resources :news
 
   get '/login', to: 'logins#new'
    post '/login', to: 'logins#create'

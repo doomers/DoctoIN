@@ -17,7 +17,8 @@
          <p> <%= link_to "SignIn",login_path,class:"btn btn-default" %> 
            <% end %>
        <% if logged_in? %>
-         <p> <%= link_to "SIgnOut",logout_path,class:"btn btn-default" %> 
+         <p> <%= link_to "News Feed",posts_path,class:"btn btn-default" %> 
+         <p> <%= link_to "SignOut",logout_path,class:"btn btn-default" %> 
          </p>
             
             <% end %>
