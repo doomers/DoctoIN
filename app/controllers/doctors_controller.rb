@@ -13,7 +13,10 @@ class DoctorsController < ApplicationController
   	end
 
   	def show
+      if logged_in?
      @doctor = Doctor.find(params[:id])
+      else render new
+      end
   	end
 
   	private 

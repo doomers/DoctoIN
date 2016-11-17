@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :doctors
+  resources :hospitals
 
   get '/login', to: 'logins#new'
    post '/login', to: 'logins#create'
