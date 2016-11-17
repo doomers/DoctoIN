@@ -11,17 +11,21 @@
       <a class="navbar-brand"  href="#">DoctIN</a>
     </div>
 
-     
-      <ul class="nav navbar-nav navbar-right">
+      <div class="nav_item">
+          <%= link_to "Home",posts_path,class: "btn btn-log btn-success" %>
+        </div>
+     <div class="nav_item">
+          <%= link_to "News Feed",posts_path,class: "btn btn-log btn-success" %>
+        </div>
+      <ul class="nav navbar-nav navbar-right pull-rig ">
           <% if !logged_in? %>
          <p> <%= link_to "SignIn",login_path,class:"btn btn-default" %> 
            <% end %>
-       <% if logged_in? %>
-         <p> <%= link_to "News Feed",posts_path,class:"btn btn-default" %> 
-         <p> <%= link_to "SignOut",logout_path,class:"btn btn-default" %> 
-         </p>
+          <% if logged_in? %>
+              <p> <%= link_to "SignOut",logout_path,class:"btn btn-warning btn-small" %> 
+              </p>
             
-            <% end %>
+          <% end %>
       </ul>
 
     </div><!-- /.navbar-collapse -->

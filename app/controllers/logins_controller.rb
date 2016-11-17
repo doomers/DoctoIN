@@ -23,7 +23,7 @@ end
 def destroy
 	session[:doctor_id] = nil
 	flash[:success]='You have logged out'
-	redirect_to "doctors/new"
+	redirect_to  new_doctor_path
 
 end
 end

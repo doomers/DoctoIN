@@ -7,7 +7,7 @@
     <th>Text</th>
   </tr>
  
-  <% @posts.each do |post| %>
+  <% @posts.reverse.each do |post| %>
       <div class ="jumbotron box-left color-background">
 
           <%= post.Description %>

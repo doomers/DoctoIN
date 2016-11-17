@@ -17,6 +17,10 @@ gem 'coffee-rails', '~> 4.2'
 # gem 'therubyracer', platforms: :ruby
 gem 'autoprefixer-rails'
 
+gem 'bcrypt', '3.1.7'
+
+
+
 gem 'bootstrap-sass', '~> 3.2.0'
 
 
