@@ -10,16 +10,17 @@
       </button>
       <a class="navbar-brand"  href="#">DoctIN</a>
     </div>
-
-      <div class="nav_item">
+    <% if logged_in? %>
+      <div class="nav_item center">
           <%= link_to "Home",posts_path,class: "btn btn-log btn-success" %>
         </div>
-     <div class="nav_item">
+     <div class="nav_item center">
           <%= link_to "News Feed",posts_path,class: "btn btn-log btn-success" %>
         </div>
-      <ul class="nav navbar-nav navbar-right pull-rig ">
+    <% end %>
+      <ul class="nav navbar-right nav_it down  center">
           <% if !logged_in? %>
-         <p> <%= link_to "SignIn",login_path,class:"btn btn-default" %> 
+         <p> <%= link_to "SignIn",login_path,class:"btn btn-info" %> 
            <% end %>
           <% if logged_in? %>
               <p> <%= link_to "SignOut",logout_path,class:"btn btn-warning btn-small" %> 

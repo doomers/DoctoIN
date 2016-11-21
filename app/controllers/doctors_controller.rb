@@ -1,4 +1,6 @@
 class DoctorsController < ApplicationController
+  before_action :require_same_user, only: [:show]
+
 	def new 
 	end
 
@@ -13,7 +15,8 @@ class DoctorsController < ApplicationController
   	end
 
   	def show
-      if logged_in?
+
+      if current_user
      @doctor = Doctor.find(params[:id])
       else render new
       end
@@ -23,5 +26,13 @@ class DoctorsController < ApplicationController
   	def chef_params
     params.require(:doctor).permit(:name, :email, :passwd, :years_of_exp)
   	end
+
+    def require_same_user
+      @doctor =Doctor.find(params[:id])
+      if current_user != @doctor
+        flash[:danger]= 'You cant see others Doctors profile'
+        redirect_to new_doctor_path
+      end
+    end
 
 end

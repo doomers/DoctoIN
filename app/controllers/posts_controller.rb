@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
 		if @post.save
     flash[:success] = "Your Post has been successfully Created"
-      	redirect_to posts_path
+      	redirect_to @post
       end
 	end
 

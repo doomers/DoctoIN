@@ -1,29 +1,41 @@
-<div class="pull-right alert">
-	<div class ="jumbotron box">
+<div class="pull-right alert ">
+	<div class ="jumbotron box well">
 	  <%= form_for :doctor,url: doctors_path do |f| %>
+	  <div class="well">
 	<p>
 	   <%= f.label :Name %>
 	   <%= f.text_field :name %> 	
 	</p>
+	  </div>
 	 
+	  <div class="well">
 	<p>
 	   <%= f.label :Email%>
 	   <%= f.text_field :email%>
 	</p>
+	  </div>
 
+      <div class="well">
 	<p>
 		<%= f.label :Password%>
 		<%=f.text_field :passwd%>
 	</p>
+	  </div>
 
+      <div class="well">
 	<p>
 	    <%= f.label :Years_Of_Experience%>
 	    <%= f.text_field :years_of_exp%>	
 	</p>
+	  </div>
 
-	<p>
-		<%= f.submit :SignUp%>
-	</p>
+      <div class = "row">
+        <div class = "col-md-4 col-md-offset-4 center">
+	        <p>
+	         	<%= f.submit :SignUp%>
+	        </p>
+	    </div>
+	  </div>
 	  
 	   <% end %>
 	 </div>
