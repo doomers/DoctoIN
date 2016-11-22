@@ -1,6 +1,8 @@
 <% if current_user %>
+<div class = "row">
+  <div class = "col-md-2">
 	<div class ="col">
-			<div class = "row-md-2 jumbotron pull-left box-left well" >
+			<div class = "row-md-2 jumbotron pull-left box-left " >
 				<h3>Welcome,<em><%= @doctor.name %></em></h3>
 
 			  
@@ -16,11 +18,17 @@
 
 
 			</div>
-
+    </div>
+  </div>
+  <div class = "col-md-6">
 		<div class =" row-md-8 pull-left left">
-		    <p> <%= link_to "What's on your mind",new_post_path,class:"btn btn-success " %> </p>
-		         <% @posts.reverse.each do |post| %>
-				     <div class ="jumbotron box-left color-background well">
+		    <p> <%= link_to "What's on your mind",new_post_path,class:"btn btn-success  btn-lg" %> </p>
+		         
+        </div>
+
+        <div class =" row-md-8 pull-left ">
+        	<% @posts.reverse.each do |post| %>
+				     <div class ="jumbotron box-left color-background well right left-large">
 				          
 				          <%= post.Description %>
 				          <%= post.doctor_id %>
@@ -29,10 +37,10 @@
 				          </div>
 				      </div>
 				 <% end %>
-</table>
 
+        </div>
 		</div>
 	</div>
-
+</div>
 
 <% end %>
