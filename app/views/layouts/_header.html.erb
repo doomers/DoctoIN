@@ -12,7 +12,7 @@
     </div>
     <% if logged_in? %>
       <div class="nav_item center">
-          <%= link_to "Home",posts_path,class: "btn btn-log btn-success" %>
+          <%= link_to "Home",doctor_path(same_current_user),class: "btn btn-log btn-success" %>
         </div>
      <div class="nav_item center">
           <%= link_to "News Feed",posts_path,class: "btn btn-log btn-success" %>

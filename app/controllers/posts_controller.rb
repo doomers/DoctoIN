@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 	end
 	def create
 		@post = Post.create(article_params)
+		@post.doctor = current_user
 
 		if @post.save
     flash[:success] = "Your Post has been successfully Created"

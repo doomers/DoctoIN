@@ -18,6 +18,7 @@ class DoctorsController < ApplicationController
 
       if current_user
      @doctor = Doctor.find(params[:id])
+     @posts = @doctor.posts
       else render new
       end
   	end

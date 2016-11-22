@@ -1,17 +1,14 @@
 
 <h1>Listing Posts</h1>
  
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Text</th>
-  </tr>
+
  
   <% @posts.reverse.each do |post| %>
-      <div class ="jumbotron box-left color-background">
-
+      <div class ="jumbotron box-left color-background well">
+          
           <%= post.Description %>
-          <div class = "pull right">
+          <%= post.doctor_id %>
+          <div class ="pull-right">
              <%= post.created_at%>
           </div>
       </div>

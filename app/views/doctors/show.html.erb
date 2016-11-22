@@ -1,29 +1,28 @@
 <% if current_user %>
-<div class = "jumbotron pull-left box-left" >
-	<h3>Welcome,<em><%= @doctor.name %></em></h3>
+<div class ="col">
+		<div class = "row-md-2 jumbotron pull-left box-left well" >
+			<h3>Welcome,<em><%= @doctor.name %></em></h3>
 
-	<p>
-		<strong>Name</strong>
-		<%= @doctor.name %>
+		  
+			<p>
+				<%= @doctor.email %>
 
-	</p>
+			</p>
 
-	<p>
-		<strong>Email</strong>
-		<%= @doctor.email %>
+			<p>
+				having <%= @doctor.years_of_exp %> of experience
 
-	</p>
+			</p>
 
-	<p>
-		<strong>Year Of Passing</strong>
-		<%= @doctor.years_of_exp %>
 
-	</p>
+		</div>
+
+	<div class =" row-md-8 s well pull-left ">
+	         <p> <%= link_to "What's on your mind",new_post_path,class:"btn btn-success " %> 
+
+	</div>
 </div>
-<div class ="pull-right space well well-lg ">
-         <p> <%= link_to "What's on your mind",new_post_path,class:"btn btn-success " %> 
 
-</div>
 
 
 <% end %>

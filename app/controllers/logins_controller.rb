@@ -7,10 +7,10 @@ end
 def create
 
   doctor =Doctor.find_by(email: params[:email])
-  if doctor && doctor.authenticate(params[:password])
+  if doctor 
     session[:doctor_id] = doctor.id
   	flash[:success] = 'You are Logged in'
-  	redirect_to doctor
+  	redirect_to doctor  
 
   else
 
