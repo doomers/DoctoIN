@@ -13,6 +13,10 @@
 	   <%= f.text_area :Description%>
 	</p>
 
+	<span class="picture">
+        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
+    </span>
+
 	<p>
        <%= f.submit %>
 	</p>
