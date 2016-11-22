@@ -2,7 +2,7 @@
 <h1>Create a new post</h1>
 <div class="alert well">
 	<div class ="jumbotron box-left color-background">
-	  <%= form_for :post,url: posts_path do |f| %>
+	  <%= form_for :post,url: posts_path, html: { multipart: true } do |f| %>
 	<p>
 	   <%= f.label :Topic %>
 	   <%= f.text_field :Topic %> 	
@@ -13,9 +13,8 @@
 	   <%= f.text_area :Description%>
 	</p>
 
-	<span class="picture">
-        <%= f.file_field :picture, accept: 'image/jpeg,image/gif,image/png' %>
-    </span>
+	  <%= f.file_field :avatar %>
+
 
 	<p>
        <%= f.submit %>

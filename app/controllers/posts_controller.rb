@@ -16,10 +16,11 @@ class PostsController < ApplicationController
 
 	def show
 		@post = Post.find(params[:id])
+		
 	end
 
 	private
 	def article_params
-		params.require(:post).permit(:topic, :Description)
+		params.require(:post).permit(:topic, :Description, :avatar)
 	end
 end
