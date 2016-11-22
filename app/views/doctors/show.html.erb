@@ -36,7 +36,7 @@
         <div class =" row-md-8 pull-left ">
         	<% @posts.reverse.each do |post| %>
 				     <div class ="jumbotron box-left color-background well well-lg right left-large">
-				          
+				          <%= image_tag(post.avatar.url(:medium)) %>
 				          <%= post.Description %>
 				          <%= post.doctor_id %>
 				          <div class ="pull-right">

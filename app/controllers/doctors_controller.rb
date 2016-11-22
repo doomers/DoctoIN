@@ -2,6 +2,10 @@ class DoctorsController < ApplicationController
   before_action :require_same_user, only: [:show]
 
 	def new 
+    if !logged_in?
+    else redirect_to same_current_user
+    end
+        
 	end
 
 	def create 
