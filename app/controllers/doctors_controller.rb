@@ -25,7 +25,7 @@ class DoctorsController < ApplicationController
 
   	private 
   	def chef_params
-    params.require(:doctor).permit(:name, :email, :passwd, :years_of_exp)
+    params.require(:doctor).permit(:name, :email, :passwd, :years_of_exp, :avatar)
   	end
 
     def require_same_user

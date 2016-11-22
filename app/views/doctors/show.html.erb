@@ -3,7 +3,14 @@
   <div class = "col-md-2">
 	<div class ="col">
 			<div class = "row-md-2 jumbotron pull-left box-left " >
-				<h3>Welcome,<em><%= @doctor.name %></em></h3>
+
+
+
+		       <%= image_tag(@doctor.avatar.url(:medium))%>
+   
+
+
+				<h3><em><%= @doctor.name %></em></h3>
 
 			  
 				<p>
@@ -20,15 +27,15 @@
 			</div>
     </div>
   </div>
-  <div class = "col-md-6">
-		<div class =" row-md-8 pull-left left">
+  <div class = "col-md-8">
+		<div class =" row-md-10 pull-right ">
 		    <p> <%= link_to "What's on your mind",new_post_path,class:"btn btn-success  btn-lg" %> </p>
 		         
         </div>
 
         <div class =" row-md-8 pull-left ">
         	<% @posts.reverse.each do |post| %>
-				     <div class ="jumbotron box-left color-background well right left-large">
+				     <div class ="jumbotron box-left color-background well well-lg right left-large">
 				          
 				          <%= post.Description %>
 				          <%= post.doctor_id %>

@@ -2,10 +2,10 @@
 
 
 	<p>
-		<strong>Description</strong>
-		<%= image_tag(@post.avatar.url(:medium))%>
-		<%= @post.Description %>
-
+	    <%= image_tag(@post.avatar.url(:medium))%>
+	    <div class = "top">
+		    <h3><em><%= @post.Description %></em></h3>
+        </div>
 	</p>
 
 </div>
