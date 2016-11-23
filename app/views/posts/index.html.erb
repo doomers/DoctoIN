@@ -3,16 +3,18 @@
  
 
  
-  <div class =" row-md-8 pull-left ">
+   <div class =" row-md-8 pull-left ">
         	<% @posts.reverse.each do |post| %>
 				     <div class ="jumbotron box-left color-background well well-lg right left-large">
 				          <%= image_tag(post.avatar.url(:medium)) %>
+				          <div class="large-down">
 				          <%= post.Description %>
-				          <%= post.doctor_id %>
+				          </div>
+				        <h4> Created By: <%=Doctor.find(post.doctor_id).name %>  </h4>
 				          <div class ="pull-right">
-				             <%= post.created_at%>
+				        <h6> Created at: <%= time_ago_in_words(post.created_at)%>  </h6>
 				          </div>
 				      </div>
 				 <% end %>
 
-   </div>
+        </div>
