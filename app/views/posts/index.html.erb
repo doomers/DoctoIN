@@ -1,20 +1,19 @@
 
-<h1>Listing Posts</h1>
- 
-
+<h1>List of all Posts</h1>
+  
  
    <div class =" row-md-8 pull-left ">
         	<% @posts.reverse.each do |post| %>
 				     <div class ="jumbotron box-left color-background well well-lg right left-large">
-				          <%= image_tag(post.avatar.url(:medium)) %>
+				          <%= link_to image_tag(post.avatar.url(:medium)),post %>
 				          <div class="large-down">
 				          <%= post.Description %>
 				          </div>
-				        <h4> Created By: <%=Doctor.find(post.doctor_id).name %>  </h4>
+				        <h4> Created By: <%=link_to Doctor.find(post.doctor_id).name,Doctor.find(post.doctor_id) %>  </h4>
 				          <div class ="pull-right">
 				        <h6> Created at: <%= time_ago_in_words(post.created_at)%>  </h6>
 				          </div>
-				      </div>
+		 		      </div>
 				 <% end %>
 
-        </div>
+    </div>

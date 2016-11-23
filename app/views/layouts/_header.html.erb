@@ -11,14 +11,26 @@
       <a class="navbar-brand"  href="#">DoctIN</a>
     </div>
     <% if logged_in? %>
-      <div class="nav_item center">
-          <%= link_to "Home",doctor_path(same_current_user),class: "btn btn-log btn-success" %>
+     <div class="col-md-10">
+      <div class="nav_item pull-right right">
+        <div class="col">
+          <%= link_to image_tag(same_current_user.avatar.url(:thumb),:width =>30,:height => 30),doctor_path(same_current_user)%>
+          <%= link_to same_current_user.name,doctor_path(same_current_user),class: "btn btn-info btn-success" %>
         </div>
-     <div class="nav_item center">
-          <%= link_to "News Feed",posts_path,class: "btn btn-log btn-success" %>
-        </div>
+     </div>
+     
+         <div class="nav_item center">
+              <%= link_to "News Feed",posts_path,class: "btn btn-log btn-success" %>
+         </div>
+          <div class="nav_item center">
+              <%= link_to "Hospitals",clinics_path,class: "btn btn-log btn-success" %>
+         </div>
+         <div class="nav_item center">
+              <%= link_to "Articles",articles_path,class: "btn btn-log btn-success" %>
+         </div>
+     </div>
     <% end %>
-      <ul class="nav navbar-right nav_it down  center">
+      <ul class="  pull-right  down  center">
           <% if !logged_in? %>
          <p> <%= link_to "SignIn",login_path,class:"btn btn-info" %> 
            <% end %>

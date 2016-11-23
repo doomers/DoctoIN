@@ -2,7 +2,8 @@ Rails.application.routes.draw do
   root 'welcome#index'
 
   resources :doctors
-  resources :hospitals
+  resources :clinics
+  resources :articles
   resources :posts
   resources :news
 

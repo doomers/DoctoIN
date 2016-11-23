@@ -1,5 +1,5 @@
 class DoctorsController < ApplicationController
-  before_action :require_same_user, only: [:show]
+  #before_action :require_same_user, only: [:show]
 
 	def new 
     if !logged_in?
@@ -7,6 +7,10 @@ class DoctorsController < ApplicationController
     end
         
 	end
+
+  def index
+    @doctors = Doctor.all
+  end
 
 	def create 
       @doctor = Doctor.create(chef_params)
@@ -20,7 +24,7 @@ class DoctorsController < ApplicationController
 
   	def show
 
-      if current_user
+      if logged_in?
      @doctor = Doctor.find(params[:id])
      @posts = @doctor.posts
       else render new

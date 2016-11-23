@@ -1,4 +1,4 @@
-<% if current_user %>
+<% if logged_in? %>
 <div class = "row color-background  ">
   <div class = "col-md-2">
 	<div class ="col">
@@ -22,25 +22,29 @@
 					having <%= @doctor.years_of_exp %> of experience
 
 				</p>
-
+               <div class =" row-md-6   ">
+			    <p> <%= link_to "Write an Article",new_post_path,class:"btn btn-success  btn-lg" %> </p>
+		        </div>
 
 			</div>
     </div>
   </div>
-  <div class = "col-md-8">
-		<div class =" row-md-10 pull-right ">
-		    <p> <%= link_to "What's on your mind",new_post_path,class:"btn btn-success  btn-lg" %> </p>
-		         
-        </div>
+  <div class = "col-md-6">
+		  <% if current_user == @doctor %>
+		     <div class =" row-md-8 pull-right show-post-top  ">
+			    <p> <%= link_to "What's on your mind",new_post_path,class:"btn btn-success  btn-lg" %> </p>
+		     </div>
+
+		  <% end %>      
 
         <div class =" row-md-8 pull-left ">
         	<% @posts.reverse.each do |post| %>
 				     <div class ="jumbotron box-left color-background well well-lg right left-large">
-				          <%= image_tag(post.avatar.url(:medium)) %>
+				          <%= link_to image_tag(post.avatar.url),post %>
 				          <div class="large-down">
 				          <%= post.Description %>
 				          </div>
-				        <h4> Created By: <%=Doctor.find(post.doctor_id).name %>  </h4>
+				        <h4> Created By: <%=link_to Doctor.find(post.doctor_id).name,Doctor.find(post.doctor_id) %>  </h4>
 				          <div class ="pull-right">
 				        <h6> Created at: <%= time_ago_in_words(post.created_at)%>  </h6>
 				          </div>

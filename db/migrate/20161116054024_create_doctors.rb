@@ -5,8 +5,7 @@ class CreateDoctors < ActiveRecord::Migration[5.0]
     	t.string :email
     	t.string :passwd
     	t.string :years_of_exp
-
-      t.timestamps
+        t.timestamps
     end
   end
 end

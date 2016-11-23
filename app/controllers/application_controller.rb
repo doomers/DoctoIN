@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
 
-   helper_method :current_user, :logged_in?, :same_current_user
+   helper_method :current_user, :logged_in?, :same_current_user, :execute_statement
 
   def current_user
     @current_user ||= Doctor.find(session[:doctor_id]) if session[:doctor_id]
@@ -22,4 +22,13 @@ class ApplicationController < ActionController::Base
    	redirect_to back
   end
  end
+
+  def execute_statement(sql)
+        results = ActiveRecord::Base.connection.execute(sql)
+        if results.present?
+            return results
+        else
+            return nil
+        end
+    end
 end

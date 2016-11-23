@@ -10,6 +10,9 @@ h1{
 	color: white;
 
 }
+.red{
+	color: red;
+}
 .box{
 	margin-right: 50px;
 	text-color: white;
@@ -71,6 +74,23 @@ html, body { background: #060410; }
 .large-down{
 	margin-top: 70px;
 }
+
+.right{
+	margin-right: 50px;
+}
+
+.margin{
+	margin-left: 50px;
+	margin-right: 50px;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+.resize-display-image{
+max-width: 10px;
+max-height:	10px;
+}
+
+
 
 
 @import "bootstrap-sprockets";
